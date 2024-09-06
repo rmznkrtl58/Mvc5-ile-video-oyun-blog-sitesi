@@ -1,0 +1,29 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_bloglar
+@{
+    ViewBag.Title = "yeniblog";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3>Blog Ekleme Sayfası</h3>
+
+@using (Html.BeginForm("bekle", "bloglar", FormMethod.Post))
+{
+    <div style="margin-top:8px">
+        <label>Blog Kategori:</label>
+        @Html.DropDownListFor(x => x.tbl_kategoriler.Id, (List<SelectListItem>)ViewBag.ktgr, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:8px">
+        <label>Blog Başlık:</label>
+        @Html.TextBoxFor(x => x.BlogBaslik, new { @class = "form-control", @placeholder = "Blog Başlık" })
+    </div>
+    <div style="margin-top:8px">
+        <label>Blog Açıklama:</label>
+        @Html.TextAreaFor(x => x.BlogAciklama, new { @class = "form-control", @placeholder = "Blog Açıklama", @rows = 6 })
+    </div>
+    <div style="margin-top:8px">
+        <label>Blog Resim:</label>
+        @Html.TextBoxFor(x => x.BlogResim, new { @class = "form-control", @placeholder = "Blog Resim"})
+    </div>
+    <div style="margin-top:8px">
+        <button class="btn btn-success">Kaydet</button>
+    </div>
+}

@@ -1,0 +1,34 @@
+﻿@using Mvc5_ile_oyun_blog_sitesi.Models.entities
+@model List<tbl_iletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3 style="margin-bottom:20px">Gelen Mesajlar</h3>
+<form method="get" class="form-group" action="/mesajlar/Index">
+    <div>
+        <label>Ad Ve Soyad:</label>
+        @Html.TextBox("k")
+        <input type="submit" class="btn btn-default" style="background-color:#ff6a00;color:white" value="Search" />
+    </div>
+</form>
+<table class="table table-hover" style="margin-top:8px">
+    <tr style="background-color:#2fd52d">
+        <th>Id:</th>
+        <th>Ad Soyad:</th>
+        <th>Mail:</th>
+        <th>Detaylar:</th>
+    </tr>
+    <tbody>
+        @foreach(var x in Model)
+            {
+                <tr>
+                    <td style="color:blue">@x.Id</td>
+                    <td>@x.AdSoyad</td>
+                    <td>@x.Eposta</td>
+                    <td><a href="/mesajlar/mgetir/@x.Id" class="btn btn-info">Detaylar</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+

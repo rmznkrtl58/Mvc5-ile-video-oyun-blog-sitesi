@@ -1,0 +1,16 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_hakkımızda
+@{
+    ViewBag.Title = "hgetir";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h3>Hakkımda Güncelleme Sayfası</h3>
+<form class="form-group" method="post" action="/hakkımızda/hgüncelle">
+    @Html.HiddenFor(x=>x.Id)
+    <div style="margin-top:8px">
+        <label>Açıklama:</label>
+        @Html.TextAreaFor(x=>x.Acıklama,new {@class="form-control",@rows=9 })
+        <button class="btn btn-success" style="margin-top:5px">Güncelle</button>
+    </div>
+</form>
+

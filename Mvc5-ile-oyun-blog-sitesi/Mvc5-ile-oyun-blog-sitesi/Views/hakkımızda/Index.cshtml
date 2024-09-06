@@ -1,0 +1,26 @@
+﻿@using Mvc5_ile_oyun_blog_sitesi.Models.entities
+@model List<tbl_hakkımızda> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3>Hakkımızda</h3>
+<table class="table table-hover" style="margin-top:8px">
+    <tr style="background-color:#ed842c">
+        <th>Id:</th>
+        <th>Açıklama:</th>
+        <th>Güncelle:</th>
+    </tr>
+    <tbody>
+        @foreach (var x in Model) 
+        {
+        
+        <tr>
+            <td style="color:blue">@x.Id)</td>
+            <td>@x.Acıklama</td>
+            <td>@Html.ActionLink("Güncelle","hgetir",new {id=x.Id },new {@class="btn btn-warning",onclick="return confirm('Güncellemek İstiyormusunuz?')" })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+

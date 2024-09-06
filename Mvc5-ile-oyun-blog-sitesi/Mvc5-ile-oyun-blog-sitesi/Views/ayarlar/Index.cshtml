@@ -1,0 +1,37 @@
+﻿@using Mvc5_ile_oyun_blog_sitesi.Models.entities
+@model List<tbl_Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3>Admin Bilgileri</h3>
+
+<table class="table table-head-fixed">
+    <tr style="background-color:#bf529f">
+        <th>Id:</th>
+        <th>Kullanıcı Adı:</th>
+        <th>Şifre:</th>
+        <th>Güncelle:</th>
+    </tr>
+    <tbody>
+        @foreach (var x in Model)
+
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.KullaniciAdi</td>
+               
+                <td>
+                    @x.Sifre
+                </td>
+                <td>
+                    <a href="/ayarlar/agetir/@x.Id" onclick="return confirm('Güncellemek İstiyormusunuz?')" class="btn btn-warning">Güncelle</a>
+                </td>
+            
+            </tr>
+
+        }
+       
+    </tbody>
+</table>
+

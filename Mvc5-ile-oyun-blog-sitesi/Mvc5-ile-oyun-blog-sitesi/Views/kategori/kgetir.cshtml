@@ -1,0 +1,18 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_kategoriler
+@{
+    ViewBag.Title = "kgetir";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h3>Kategori Güncelleme Sayfas</h3>
+<form class="form-group" method="post" action="/kategori/kguncelle">
+    @Html.HiddenFor(x=>x.Id)
+    <div style="margin-top:8px">
+        <label>Kategori Ad:</label>
+        @Html.TextBoxFor(x=>x.KategoriAd,new {@class="form-control" })
+    </div>
+    <div style="margin-top:8px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+</form>
+

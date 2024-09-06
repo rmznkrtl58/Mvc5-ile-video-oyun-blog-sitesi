@@ -1,0 +1,36 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_yorumlar
+<section id="comment-form" class="comment-form section">
+    <div class="container">
+
+        <form class="form-group" method="post" >
+            <h4>Yorum Yap</h4>
+            <p>E-posta adresiniz yayınlanmayacaktır. Zorunlu alanlar * ile işaretlenmiştir</p>
+            <div class="row">
+                <div class="col form-group" style="margin-bottom:8px" >
+                    <label style="margin-bottom:7px">Blog Id:</label>
+                    <input name="Blog" type="text" class="form-control" value="@ViewBag.blg" >
+                </div>
+            </div>
+                <div class="row" style="margin-bottom:-15px">
+                    <div class="col-md-6 form-group">
+                        <input name="AdSoyad" type="text" class="form-control" placeholder="Ad Ve Soyad">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <input name="Eposta" type="text" class="form-control" placeholder="E-posta">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group">
+                        <textarea name="Yorum" class="form-control" placeholder="Yorumunuz"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+
+</form>
+
+    </div>
+</section>

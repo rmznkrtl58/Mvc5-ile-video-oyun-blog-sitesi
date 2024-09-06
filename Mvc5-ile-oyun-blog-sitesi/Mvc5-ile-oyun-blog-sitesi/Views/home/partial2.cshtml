@@ -1,0 +1,24 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.sınıflar.Class1
+<section id="about-2" class="about-2 section light-background">
+
+    <div class="container">
+        <div class="content">
+            <h3 style="margin-left:530px;color:#2e3ef1">Duyurular</h3>
+            <table class="table table-hover">
+                
+                <tr >
+                    <th style="background-color:#e98f38;color:black">Konu:</th>
+                    <th style="background-color: #e98f38; color: black ">Açıklama:</th>
+                </tr>
+                <tbody>
+                    @foreach (var x in Model.dyr)
+                    {
+            <tr>
+                <td>@x.Konu</td>
+                <td>@x.Acıklama</td>
+            </tr>}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

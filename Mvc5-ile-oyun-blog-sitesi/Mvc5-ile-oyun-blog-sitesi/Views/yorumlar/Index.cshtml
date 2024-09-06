@@ -1,0 +1,40 @@
+﻿@using Mvc5_ile_oyun_blog_sitesi.Models.entities
+@model List<tbl_yorumlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3 style="margin-bottom:15px">Yorumlar</h3>
+<form class="form-group" method="get" action="/yorumlar/Index">
+    <div>
+        <label>Blog Başlık:</label>
+        @Html.TextBox("y")
+        <input type="submit" class="btn btn-default" style="background-color:#0ae8da;color:black" value="Search" />
+    </div>
+</form>
+<table class="table table-hover" style="margin-top:8px">
+    <tr style="background-color:#f353e6">
+        <th>Id:</th>
+        <th>Blog:</th>
+        <th>Ad Soyad:</th>
+        <th>Yorum:</th>
+        <th>Yorum Yapılma Tarihi:</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach(var x in Model) {
+            <tr>
+                <td style="color:red">@x.Id</td>
+                <td>@x.tbl_bloglar.BlogBaslik</td>
+                <td>@x.AdSoyad</td>
+                <td>@x.Yorum</td>
+                <td>@Convert.ToDateTime(x.YTarih).ToShortDateString()</td>
+                <td>@Html.ActionLink("Sil","ysil",new {id=x.Id },new {@class="btn btn-danger",onclick="return confirm('Silmek İstiyormusun?')" })</td>
+                <td>@Html.ActionLink("Güncelle","ygetir",new {id=x.Id },new {@class="btn btn-warning",onclick="return confirm('Güncellemek İstiyormusun?')" })</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

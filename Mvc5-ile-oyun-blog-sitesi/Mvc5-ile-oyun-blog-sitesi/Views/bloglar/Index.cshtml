@@ -1,0 +1,41 @@
+﻿@using Mvc5_ile_oyun_blog_sitesi.Models.entities
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<tbl_bloglar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3>Blog Listesi</h3>
+<form method="get" action="/bloglar/Index" class="form-group">
+    <div style="margin-top:15px;margin-bottom:5px">
+        <label>Blog Başlık:</label>
+        @Html.TextBox("s")@*Index controllerdan yolladığımız s parametresi*@
+        <input type="submit" class="btn btn-default" style="background-color:#bb61db;color:white" value="Search" />
+    </div>
+</form>
+<table style="margin-top:10px" class="table table-hover">
+<tr style="background-color:#31f6f0">
+    <th>Blog Id:</th>
+    <th>Blog Kategori:</th>
+    <th>Blog Başlık:</th>
+    <th>Blog Açıklama:</th>
+    <th>Sil</th>
+    <th>Detaylar</th>
+</tr>     
+   <tbody>
+       @foreach(var x in Model)
+       {
+       <tr>
+           <td>@x.BlogId</td>
+           <td>@x.tbl_kategoriler.KategoriAd</td>
+           <td>@x.BlogBaslik</td>
+           <td>@x.BlogAciklama</td>
+           <td>@Html.ActionLink("Sil","bsil",new {id=x.BlogId },new {@class="btn btn-danger",onclick="return confirm('Silmek İstiyormusunuz?')" })</td>
+           <td>@Html.ActionLink("Detaylar","bgetir",new {id=x.BlogId },new {@class="btn btn-warning",onclick="return confirm('Güncellemek İstiyormusunuz?')" })</td>
+       </tr>
+       }
+   </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index","bloglar", new {sayfa }))
+<a href="/bloglar/yeniblog" class="btn btn-info" style="margin-top:5px;margin-bottom:10px">Yeni Blog</a>

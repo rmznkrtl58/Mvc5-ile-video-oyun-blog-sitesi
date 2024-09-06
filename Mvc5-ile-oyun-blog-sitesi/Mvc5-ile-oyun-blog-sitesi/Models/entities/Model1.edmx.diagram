@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="98673f456b584beab3cf1c717e9e957e" Name="Diagram1">
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_bloglar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_hakkımızda" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_homegiris" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_iletisim" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_iletisim2" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_kategoriler" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_yorumlar" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="dbmvc5oyunblogModel.FK_tbl_bloglar_tbl_kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="dbmvc5oyunblogModel.FK_tbl_yorumlar_tbl_bloglar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_Admin" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_duyurular" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="dbmvc5oyunblogModel.tbl_sosyalmedya" Width="1.5" PointX="5.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

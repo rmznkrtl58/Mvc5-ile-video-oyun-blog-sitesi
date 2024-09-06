@@ -1,0 +1,32 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_yorumlar
+@{
+    ViewBag.Title = "ygetir";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h3>Yorum Güncelleme Sayfası</h3>
+@using (Html.BeginForm("yguncelle", "yorumlar", FormMethod.Post))
+{@Html.HiddenFor(x => x.Id)
+
+<div style="margin-top:8px">
+    <label>Blog:</label>
+    @Html.DropDownListFor(x => x.tbl_bloglar.BlogId, (List<SelectListItem>)ViewBag.blg, new { @class = "form-control" })
+</div>
+<div style="margin-top:8px">
+    <label>Ad Soyad:</label>
+    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+</div>
+<div style="margin-top:8px">
+    <label>E-posta:</label>
+    @Html.TextBoxFor(x => x.Eposta, new { @class = "form-control" })
+</div>
+<div style="margin-top:8px">
+    <label>Yorum:</label>
+    @Html.TextAreaFor(x => x.Yorum, new { @class = "form-control",@rows=2 })
+</div>
+<div style="margin-top:8px">
+    <button class="btn btn-success">Güncelle</button>
+</div>
+
+
+}

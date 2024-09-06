@@ -1,0 +1,19 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_duyurular
+@{
+    ViewBag.Title = "dgetir";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+<h3>Duyuru Güncelleme Paneli</h3>
+<form class="form-group" method="post" action="/duyurular/dguncelle">
+    @Html.HiddenFor(x => x.Id)
+    <div style="margin-top:8px">
+        <label>Blog Başlık:</label>
+        @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:8px">
+        <label>Açıklama:</label>
+        @Html.TextAreaFor(x => x.Acıklama, new { @class = "form-control",@rows=3 })
+    </div>
+    <button style="margin-top:8px" class="btn btn-success">Güncelle</button>
+</form>
+

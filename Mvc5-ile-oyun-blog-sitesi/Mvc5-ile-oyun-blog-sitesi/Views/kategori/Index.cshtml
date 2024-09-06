@@ -1,0 +1,42 @@
+﻿@using Mvc5_ile_oyun_blog_sitesi.Models.entities
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<tbl_kategoriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+
+<h3>Kategori Listesi</h3>
+@using (Html.BeginForm("Index", "kategori", FormMethod.Get))
+{ 
+<div style="margin-top:15px;margin-bottom:10px">
+    <label>Kategori Ad:</label>
+    @Html.TextBox("k")
+    <input type="submit" class="btn btn-default" style="background-color:#47d437;color:black"  value="Search"/>
+</div>
+}
+<table class="table table-bordered" style="margin-top:8px">
+    <tr style="background-color:#f1e843">
+        <th>Id:</th>
+        <th>Kategori Ad:</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.KategoriAd</td>
+                <td>@Html.ActionLink("Sil", "ksil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyormusunuz?')" })</td>
+                <td>@Html.ActionLink("Güncelle", "kgetir", new { id = x.Id }, new { @class = "btn btn-warning", onclick = "return confirm('Güncellemek İstiyormusunuz?')" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", "kategori", new { sayfa }))
+</div>
+<a href="/kategori/yenikategori" class="btn btn-primary" style="margin-bottom:10px">Kategori Ekle</a>

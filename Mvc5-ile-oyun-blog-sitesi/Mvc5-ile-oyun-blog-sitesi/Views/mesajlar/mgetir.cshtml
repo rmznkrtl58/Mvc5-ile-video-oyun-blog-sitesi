@@ -1,0 +1,26 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_iletisim
+@{
+    ViewBag.Title = "mgetir";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h3>Mesaj Detayları</h3>
+<form class="form-group">
+    @Html.HiddenFor(x => x.Id)
+    <div style="margin-top:7px">
+        <label>Ad Ve Soyad:</label>
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:7px">
+        <label>E-posta:</label>
+        @Html.TextBoxFor(x => x.Eposta, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:7px">
+        <label>Konu:</label>
+        @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:7px">
+        <label>Mesaj:</label>
+        @Html.TextAreaFor(x => x.Mesaj, new { @class = "form-control",@rows=4 })
+    </div>
+</form>

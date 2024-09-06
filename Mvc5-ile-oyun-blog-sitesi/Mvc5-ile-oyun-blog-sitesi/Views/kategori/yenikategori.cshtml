@@ -1,0 +1,16 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_kategoriler
+@{
+    ViewBag.Title = "yenikategori";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h3>Kategori Ekleme Sayfası</h3>
+<form class="form-group" method="post" >
+    <div style="margin-top:8px">
+        @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control", @placeholder = "Kategori Ad" })
+    </div>
+    <div style="margin-top:8px">
+        <button class="btn btn-success">Kaydet</button>
+    </div>
+</form>
+

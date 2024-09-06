@@ -1,0 +1,20 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_iletisim
+<div class="col-lg-8">
+    @using (Html.BeginForm("mesaj", "iletişim", FormMethod.Post)) {
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input type="text" name="AdSoyad" class="form-control" id="name" placeholder="Ad Soyad" required="">
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="Eposta" id="email" placeholder="E-posta" required="">
+            </div>
+        </div>
+        <div class="form-group mt-3">
+            <input type="text" class="form-control" name="Konu" id="subject" placeholder="Konu" required="">
+        </div>
+        <div class="form-group mt-3">
+            <textarea class="form-control" name="Mesaj" placeholder="Mesajınız" required=""></textarea>
+        </div>
+        <div class="text-center"><button type="submit" class="btn btn-success" style="margin-top:10px">Gönder</button></div>
+    }
+</div>

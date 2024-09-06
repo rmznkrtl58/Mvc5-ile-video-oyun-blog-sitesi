@@ -1,0 +1,19 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.entities.tbl_Admin
+@{
+    ViewBag.Title = "agetir";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h2>Admin Bilgileri Güncelleme Sayfası</h2>
+@using (Html.BeginForm("agüncelle", "ayarlar", FormMethod.Post))
+{@Html.HiddenFor(x => x.Id)
+<div style="margin-top:8px">
+    <label>Kullanıcı Adı:</label>
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+</div>
+<div style="margin-top:8px">
+    <label>Şifre:</label>
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+</div>
+<button style="margin-top:8px" class="btn btn-success">Güncelle</button>
+}

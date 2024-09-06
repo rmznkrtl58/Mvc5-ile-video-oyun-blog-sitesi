@@ -1,0 +1,61 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.sınıflar.Class1
+<section id="testimonials" class="testimonials section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Son Yorumlar</h2>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                        {
+                          "loop": true,
+                          "speed": 600,
+                          "autoplay": {
+                            "delay": 5000
+                          },
+                          "slidesPerView": "auto",
+                          "pagination": {
+                            "el": ".swiper-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                          },
+                          "breakpoints": {
+                            "320": {
+                              "slidesPerView": 1,
+                              "spaceBetween": 40
+                            },
+                            "1200": {
+                              "slidesPerView": 1,
+                              "spaceBetween": 1
+                            }
+                          }
+                        }
+                    </script>
+                    <div class="swiper-wrapper">
+                        @foreach(var x in Model.yrm) {
+                        <div class="swiper-slide">
+                            <div class="testimonial mx-auto">
+                                <figure class="img-wrap">
+                                    <img src="~/avatar/man.png" />
+                                </figure>
+                                <h2 class="name" style="font-size:22px">@x.AdSoyad</h2>
+                                <h5 style="color:#ff6a00;font-size:18px">@x.tbl_bloglar.BlogBaslik</h5>
+                                <blockquote>
+                                    <p>
+                                        @x.Yorum
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+                        }
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

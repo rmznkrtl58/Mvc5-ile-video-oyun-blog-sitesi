@@ -1,0 +1,116 @@
+﻿@model Mvc5_ile_oyun_blog_sitesi.Models.sınıflar.Class1
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact - Active Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="~/web/assets/img/favicon.png" rel="icon">
+    <link href="~/web/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/web/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/web/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/web/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/web/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/web/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="~/web/assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Active
+    * Template URL: https://bootstrapmade.com/active-bootstrap-website-template/
+    * Updated: Aug 07 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+<body class="contact-page">
+
+    <main class="main">
+
+       
+        <section id="contact" class="contact section">
+
+            <div class="container" data-aos="fade">
+
+                <div class="row gy-5 gx-lg-5">
+
+                    <div class="col-lg-4">
+                        @foreach(var x in Model.iltsm) {
+                        <div class="info">
+                            <h3>Bizimle İletişim Kurun</h3>
+                            <p>Merhaba! Size nasıl yardımcı olabileceğimiz konusunda bize ulaşmaktan çekinmeyin. Sorularınız, geri bildirimleriniz veya herhangi bir konuda desteğe ihtiyacınız varsa, lütfen aşağıdaki iletişim kanallarını kullanarak bizimle iletişime geçin.</p>
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h4>@x.AdresBaslik</h4>
+                                    <p>@x.AdresAciklama</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h4>Eposta</h4>
+                                    <p>@x.Eposta</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-phone flex-shrink-0"></i>
+                                <div>
+                                    <h4>Telefon</h4>
+                                    <p>@x.Telefon</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                        </div>
+                        }
+                    </div>
+
+                  @Html.Action("partial1")
+
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+    </main>
+
+    
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/web/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/web/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/web/assets/vendor/aos/aos.js"></script>
+    <script src="~/web/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/web/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/web/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/web/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="~/web/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
